@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
+
 
   return (
     <header
@@ -27,7 +25,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Button className="bg-white text-black" variant="outline">
+          <Button className="bg-white text-black dark:bg-blue-400" variant="outline">
             Login
           </Button>
         </div>

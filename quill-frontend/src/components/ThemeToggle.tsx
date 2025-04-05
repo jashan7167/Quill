@@ -1,6 +1,5 @@
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -17,18 +16,16 @@ export function ThemeToggle() {
           !isDark ? "text-blue-500" : "text-white/70"
         }`}
       />
-      <div className="relative w-10 h-5">
-        <Switch
-          checked={isDark}
-          onCheckedChange={toggleTheme}
-          className="appearance-none w-full h-full rounded-full bg-zinc-300 dark:bg-zinc-600 focus:outline-none"
-        />
-        <div
-          className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow-md transition-transform duration-350 ${
+      <button
+        onClick={toggleTheme}
+        className="relative w-10 h-5 rounded-full bg-zinc-300 dark:bg-zinc-600 transition-colors"
+      >
+        <span
+          className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow-md transition-transform duration-300 ${
             isDark ? "translate-x-5" : "translate-x-0"
           }`}
         />
-      </div>
+      </button>
       <Moon
         className={`w-5 h-5 transition-colors ${
           isDark ? "text-blue-500" : "text-white/70"
