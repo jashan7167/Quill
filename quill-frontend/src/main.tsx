@@ -4,14 +4,14 @@ import "./index.css";
 import App from "./App.tsx";
 import { Provider } from "react-redux";
 import { store } from "./store.ts";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "./components/theme-provider";
 
 createRoot(document.getElementById("root")!).render(
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
   <StrictMode>
-    <Provider store={store}>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <Provider store={store}>
         <App />
-    </Provider>
+      </Provider>
+    </ThemeProvider>
   </StrictMode>
-      </ThemeProvider>
 );

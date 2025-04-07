@@ -6,12 +6,16 @@ const Hero = () => {
         bg-gradient-to-br 
         from-[#f8faff] via-[#edf1fd] to-[#e6ebff]
         dark:from-[#0f0f11] dark:via-[#1a1a1d] dark:to-[#2a2a2e]
+        text-black dark:text-white
         transition-colors duration-500
       "
     >
       <div className="max-w-2xl mx-auto px-4">
         <h1 className="text-5xl sm:text-6xl font-bold mb-4">
-          Create Notes <span className="text-blue-600 dark:text-blue-400">Effortlessly</span>
+          Create Notes{" "}
+          <span className="text-blue-600 dark:text-blue-400">
+            Effortlessly
+          </span>
         </h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-300 mb-6">
           Minimal, clean and fast — organize your thoughts with ease.

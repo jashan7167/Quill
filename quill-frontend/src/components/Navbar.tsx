@@ -2,8 +2,6 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navbar = () => {
-
-
   return (
     <header
       className="
@@ -25,7 +23,10 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Button className="bg-white text-black dark:bg-blue-400" variant="outline">
+          <Button
+            className="bg-white hover:bg-gray-100 text-black dark:bg-blue-400 dark:hover:bg-blue-500 dark:text-white transition-colors"
+            variant="outline"
+          >
             Login
           </Button>
         </div>
