@@ -2,17 +2,32 @@ import "./App.css";
 import { ThemeProvider } from "./components/theme-provider";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import NoteGridWrapper from "./components/NoteGridWrapper";
+import { PageBackground } from "./components/ui/PageBackground";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+
 function App() {
   return (
-    <>
-      <div className="min-h-screen bg-background text-foreground">
-        <Navbar />
-        <Hero />
-        <div className="w-full h-20 bg-white dark:bg-black text-black dark:text-white transition-all duration-300">
-          This box should change color on toggle
-        </div>
-      </div>
-    </>
+    <Router>
+      <PageBackground>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route 
+            path="/" 
+            element={
+              <>
+                <Navbar />
+                <Hero />
+                <NoteGridWrapper />
+              </>
+            } 
+          />
+        </Routes>
+      </PageBackground>
+    </Router>
   );
 }
 
